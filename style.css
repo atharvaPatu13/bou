@@ -1,0 +1,259 @@
+body {
+    background-image: url('./assets/papermeoe.jpg');
+    background-size: cover;
+    background-position: center center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: background-image 0.8s ease;  /* Smooth transition for background */
+}
+
+/* Background changes for each card hover */
+
+.main {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.paper {
+    border: 2px solid black;
+    position: absolute;
+    cursor: grab;
+    background-size: cover;
+    box-shadow: 1px 15px 20px 0px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+/* Center heart */
+.paper.paper1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    border-radius: 50%;
+    /* Center the heart both vertically and horizontally */
+    transform: translate(-50%, +75%);
+    left: 50%;
+    top: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    transform-style: flat;
+    position: absolute;
+}
+
+.paper.paper1 img {
+    width: 150px;
+    height: 150px;
+}
+
+/* Front and back faces of cards */
+.paper .front,
+.paper .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.paper .back {
+    background-image: url('./assets/paper.jpg');
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+
+.paper .front p {
+    background-color: rgba(255, 255, 255, 0.9);  /* Semi-transparent white */
+    padding: 10px 20px;
+    border-radius: 8px;  /* Rounded corners */
+    margin: 5px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+/* Keeping back text as is */
+.paper .back p {
+    background-color: transparent;  /* No background for back text */
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+
+/* Message cards spread in a wider circle */
+.paper.paper2 {
+    z-index: 9;
+    width: 200px;
+    height: 350px;
+    transform: translate(-600px, 50px) rotateZ(-20deg);  /* Changed from -400px to -600px */
+}
+
+
+.paper.paper2 .front {
+    background-image: url('./assets/paper1.jpg');
+    background-size: cover;
+}
+
+.paper.paper3 {
+    z-index: 8;
+    width: 250px;
+    height: 350px;
+    transform: translate(-200px, -100px) rotateZ(-10deg);
+}
+
+.paper.paper3 .front {
+    background-image: url('./assets/paper2.jpg');
+    background-size: cover;
+}
+
+.paper.paper4 {
+    z-index: 7;
+    width: 200px;
+    height: 350px;
+    transform: translate(200px, -100px) rotateZ(10deg);
+}
+
+.paper.paper4 .front {
+    background-image: url('./assets/paper3.jpg');
+    background-size: cover;
+}
+
+
+.paper.paper5 {
+    z-index: 6;
+    width: 220px;
+    height: 350px;
+    transform: translate(600px, 50px) rotateZ(20deg);  /* Changed from 400px to 600px */
+}
+
+.paper.paper5 .front {
+    background-image: url('./assets/paper4.jpg');
+    background-size: cover;
+}
+body.hover-paper2 {
+    background-image: url('./assets/back2.jpg');
+    background-size: 80% auto;  /* More zoomed out */
+}
+
+body.hover-paper3 {
+    background-image: url('./assets/back3.jpg');
+    background-size: 120% auto;  /* More zoomed out */
+}
+
+body.hover-paper4 {
+    background-image: url('./assets/back4.jpg');
+    background-size: 120% auto;  /* More zoomed out */
+}
+
+body.hover-paper5 {
+    background-image: url('./assets/back5.jpg');
+    background-size: 90% auto;  /* More zoomed out */
+}
+
+/* Hover effects for card flips */
+.paper:hover {
+    z-index: 20;
+}
+
+/* Also update their hover states */
+.paper.paper2:hover {
+    transform: translate(-600px, 30px) rotateY(180deg) rotateZ(-20deg);  /* Changed from -400px to -600px */
+}
+
+.paper.paper3:hover {
+    transform: translate(-200px, -120px) rotateY(180deg) rotateZ(-10deg);
+}
+
+.paper.paper4:hover {
+    transform: translate(200px, -120px) rotateY(180deg) rotateZ(10deg);
+}
+
+.paper.paper5:hover {
+    transform: translate(600px, 30px) rotateY(180deg) rotateZ(20deg);  /* Changed from 400px to 600px */
+}
+
+/* Text styling */
+p {
+    font-family: "Zeyada", cursive;
+    font-weight: 500;
+    font-size: xx-large;
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.back p {
+    color: #333;
+    font-size: 1.4em;
+    margin: 10px 0;
+    font-weight: bold;  /* Added bold */
+}
+
+/* Footer styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    background-color: rgba(255, 255, 255, 0.9);  /* Semi-transparent white background */
+    padding: 5px 15px;  /* Add some padding around the text */
+    border-radius: 8px;  /* Rounded corners */
+    margin: 0;  /* Reset margin */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+    .main {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 1000px) {
+    .main {
+        transform: scale(0.6);
+    }
+}
+
+@media (max-width: 700px) {
+    .main {
+        transform: scale(0.4);
+    }
+}
+
+/* Additional responsive breakpoints */
+@media (max-width: 1200px) {
+    .main {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        transform: scale(0.5);
+    }
+}
